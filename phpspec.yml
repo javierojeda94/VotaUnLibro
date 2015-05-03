@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: VotaUnLibro
+        psr4_prefix: VotaUnLibro
+        src_path: app
