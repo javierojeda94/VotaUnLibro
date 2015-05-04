@@ -5,6 +5,7 @@ use VotaUnLibro\Http\Controllers\Controller;
 use VotaUnLibro\Book;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class BooksController extends Controller {
 
@@ -26,7 +27,7 @@ class BooksController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('books.new');	
 	}
 
 	/**
@@ -34,9 +35,14 @@ class BooksController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$book = new Book();
+		$book->title = $request->input('title');
+		$book->synopsis = $request->input('synopsis');
+		$book->user_id = Auth::user()->id;
+		$book->save();
+		return redirect("books/show/$book->id");
 	}
 
 	/**

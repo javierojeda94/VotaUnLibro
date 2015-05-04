@@ -11,16 +11,25 @@
 |
 */
 
+// GET ROUTES
 Route::get('/', 'HomeController@index');
 
 Route::get('books', 'BooksController@index');
 
 Route::get('books/search', 'BooksController@search');
 
+Route::get('books/new', 'BooksController@create');
+
 Route::get('books/show/{id}', 'BooksController@show');
 
+Route::get('profile','UsersController@profile');
+
+// POST ROUTES
 Route::post('review/new/{book_id}','ReviewsController@store');
 
+Route::post('books/store','BooksController@store');
+
+// CONTROLLER ROUTES
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

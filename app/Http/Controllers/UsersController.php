@@ -1,13 +1,14 @@
 <?php namespace VotaUnLibro\Http\Controllers;
 
 use VotaUnLibro\User;
+use Auth;
 
 class UsersController extends Controller {
 
-	public function getIndex()
+	public function profile()
 	{
-		$u = User::first();
-		return view('users.index',compact('u'));
+		$user = Auth::user();
+		return view('users.profile',compact('user'));
 	}
 
 }

@@ -16,11 +16,12 @@
 	<hr>
 	@if (!Auth::guest()):
 	<div class="container">
+		<h2>Escribe una reseña</h2>
 		<div class="row">
 			<div class="well">
 				<form accept-charset="UTF-8" action="{{ url('review/new',$book->id) }}" method="POST">
 					<input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
-					<input required placeholder="Escribe el título de tu reseña..." type="text" name="title" class="form-control" style="padding: 5px 15px; margin-bottom: 5px; border-radius: 6px; width: 400px">
+					<input required placeholder="Escribe el título de tu reseña..." type="text" name="title" class="form-control" style="padding: 5px 15px; margin-bottom: 5px; border-radius: 6px; width: 50%">
 					<textarea required id="new_review" name="long_review" 
 					placeholder="Escribe tu reseña..." rows="5" style="padding: 15px; border-radius: 6px; width: 100%"></textarea>
 					<button class="btn btn-info" type="submit">Agregar reseña</button>
