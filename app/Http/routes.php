@@ -14,6 +14,8 @@
 // GET ROUTES
 Route::get('/', 'HomeController@index');
 
+Route::get('home','HomeController@index');
+
 Route::get('books', 'BooksController@index');
 
 Route::get('books/search', 'BooksController@search');
