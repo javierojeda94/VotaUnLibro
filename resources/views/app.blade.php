@@ -6,9 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>VotaUnLibro</title>
 
-        <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
         <!-- Fonts -->
+        <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/AdminLTE.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/AdminLTE.css') }}" rel="stylesheet">
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -18,8 +20,8 @@
                 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
                 <![endif]-->
     </head>
-    <body>
-        <nav class="navbar navbar-findcond navbar-fixed-top">
+    <body style="background: lavenderblush;">
+        <nav style="background: rgb(1, 117, 178);" class="navbar navbar-findcond navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -28,31 +30,33 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ url('/') }}">VotaUnLibro</a>
+                    <a class="navbar-brand" href="{{ url('/') }}"><strong>Vota un libro</strong></a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                                
+
                         </li>
                         <ul class="nav navbar-nav navbar-right">
-                                @if (Auth::guest())
-                                <li><a href="{{ url('/auth/login') }}">Iniciar sesión</a></li>
-                                <li><a href="{{ url('/auth/register') }}">Registrar</a></li>
-                                @else
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="{{ url('/profile') }}">Ver perfil</a></li>
-                                        <li><a href="{{ url('/auth/logout') }}">Cerrar sesión</a></li>
-                                    </ul>
-                                </li>
-                                @endif
-                            </ul>
+                            @if (Auth::guest())
+                            <li><a href="{{ url('/auth/login') }}">Iniciar sesión</a></li>
+                            <li><a href="{{ url('/auth/register') }}">Registrar</a></li>
+                            @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><strong>{{ Auth::user()->name }}</strong> <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ url('/profile') }}">Ver perfil</a></li>
+                                    <li><a href="{{ url('/auth/logout') }}">Cerrar sesión</a></li>
+                                </ul>
+                            </li>
+                            @endif
+                        </ul>
                     </ul>
-                    <form class="navbar-form search-form" method="get" action="{{ url('books/search') }}">
-                        <input placeholder="Escribe aquí el nombre del libro..." type="text" name="s" class="form-control">
-                        <input type="submit" class="form-control"/>
+                    <form class="navbar-form navbar-right search-form" method="get" action="{{ url('books/search') }}">
+                        <input size="27" placeholder="Harry Potter, La Bilbia, etc." type="text" name="s" class="form-control">
+                        <button type="submit" class="form-control btn btn-primary" style="color: #FFFFF"/>
+                        Buscar <i class="glyphicon glyphicon-search"></i>
+                        </button>
                     </form>
                 </div>
             </div>
