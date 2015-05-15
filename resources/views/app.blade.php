@@ -20,7 +20,7 @@
                 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
                 <![endif]-->
     </head>
-    <body style="background: lavenderblush;">
+    <body style="background: whitesmoke;">
         <nav style="background: rgb(1, 117, 178);" class="navbar navbar-findcond navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -34,9 +34,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-
-                        </li>
+                        <li class="active"><a href="#">Ana Sayfa <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="#">Ana Sayfa <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="#">Ana Sayfa <span class="sr-only">(current)</span></a></li>
                         <ul class="nav navbar-nav navbar-right">
                             @if (Auth::guest())
                             <li><a href="{{ url('/auth/login') }}">Iniciar sesión</a></li>
@@ -54,7 +54,7 @@
                     </ul>
                     <form class="navbar-form navbar-right search-form" method="get" action="{{ url('books/search') }}">
                         <input size="27" placeholder="Harry Potter, La Bilbia, etc." type="text" name="s" class="form-control">
-                        <button type="submit" class="form-control btn btn-primary" style="color: #FFFFF"/>
+                        <button type="submit" class="form-control btn btn-default" style="color: #FFFFF"/>
                         Buscar <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </form>
