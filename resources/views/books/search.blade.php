@@ -28,7 +28,7 @@
     <div class="container" id="searchable-container">
         <div class="box box-danger">
             <h2 class="box-title">Rsultados de la busqueda</h2>
-            <h4 class="box-title">Su busqueda produjo <strong><?php echo sizeof($books) ?></strong> coincidencias con la palabra "palabra buscada"</h4>
+            <h4 class="box-title">Su busqueda produjo <strong><?php echo sizeof($books) ?></strong> coincidencias con la palabra "{{ $input }}"</h4>
             <div class="box-body">
                 <div>
                     <h2>¿Desea realizar otra búsqueda?</h2>

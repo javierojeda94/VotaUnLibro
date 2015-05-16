@@ -100,7 +100,7 @@ class BooksController extends Controller {
 	public function search(Request $request){
 		$input = $request->input('s');
 		$books = Book::where('title','LIKE',"%$input%")->paginate(10);
-		return view('books.search',compact('books'));
+		return view('books.search',compact('books','input'));
 	}
 
 }
