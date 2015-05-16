@@ -21,7 +21,7 @@
                 </table>
                 <hr>
             @endforeach
-            <?php echo $books->render(); ?>
+            <?php echo $books->appends(['s' => $input])->render(); ?>
         </div>
     </div>
     @else:
