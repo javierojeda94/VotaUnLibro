@@ -17,5 +17,6 @@
 		<hr >
 	</div>
 	@endforeach
+	<?php echo $books->render(); ?>
 </div>
 @endsection
