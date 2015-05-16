@@ -5,26 +5,23 @@
 <div class="container" id="searchable-container">
     <div class="box box-success">
         <h2 class="box-title" style="margin-left: 3%; margin-right: 3%;">Resultados de la busqueda</h2>
-        <h5 class="box-title" style="margin-left: 3%; margin-right: 3%;">Aproximadamente <strong><?php echo sizeof($books) ?></strong> coincidencias</h5>
+        <h5 class="box-title" style="margin-left: 3%; margin-right: 3%;">Aproximadamente <strong><?php echo sizeof($books) ?></strong> coincidencias por página</h5>
         <div class="box-body" style="margin-left: 3%; margin-right: 3%;">
             @foreach($books as $book)
-            <div class="">
-                <div class="">
-                    <table>
-                        <tr>
-                            <td>
-                                <a href="{{ url('/books/show',$book->id) }}"><img src="{{ asset('/images/empty_book.jpg') }}" height="10%" /></a>
-                            </td>
-                            <td>
-                                <strong><a style="color: #141823; font-size: 14px" href="{{ url('/books/show',$book->id) }}">{{$book->title}}</a></strong><br/>
-                                {{$book->synopsis}} <a style="color: #1a0dab; text-decoration: underline" href="{{ url('/books/show',$book->id) }}">Más sobre este libro...
-                            </td>
-                        </tr>
-                    </table>
-                    <hr>
-                </div>
-                @endforeach
-            </div>
+                <table>
+                    <tr>
+                        <td>
+                            <a href="{{ url('/books/show',$book->id) }}"><img src="{{ asset('/images/empty_book.jpg') }}" height="10%" /></a>
+                        </td>
+                        <td>
+                            <strong><a style="color: #141823; font-size: 14px" href="{{ url('/books/show',$book->id) }}">{{$book->title}}</a></strong><br/>
+                            {{$book->synopsis}} <a style="color: #1a0dab; text-decoration: underline" href="{{ url('/books/show',$book->id) }}">Más sobre este libro...
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+            @endforeach
+            <?php echo $books->render(); ?>
         </div>
     </div>
     @else:
