@@ -11,7 +11,7 @@
 	<div class="book">
 		<div class="book_brief">
 			<h1>{{$book->title}}</h1>
-			<p>{{$book->synopsis}}</p>
+			<p><?php echo substr($book->synopsis, 0, 350) . '...'; ?></p>
 			<a href="{{ url('/books/show',$book->id) }}">Ver detalles...</a>
 		</div>
 		<hr >
