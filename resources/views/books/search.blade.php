@@ -15,7 +15,7 @@
                         </td>
                         <td>
                             <strong><a style="color: #141823; font-size: 14px" href="{{ url('/books/show',$book->id) }}">{{$book->title}}</a></strong><br/>
-                            {{$book->synopsis}} <a style="color: #1a0dab; text-decoration: underline" href="{{ url('/books/show',$book->id) }}">Más sobre este libro...
+                            <?php echo substr($book->synopsis, 0, 350) . '...'; ?> <a style="color: #1a0dab; text-decoration: underline" href="{{ url('/books/show',$book->id) }}">Más sobre este libro...
                         </td>
                     </tr>
                 </table>
