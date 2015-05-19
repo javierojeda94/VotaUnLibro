@@ -12,6 +12,8 @@
         <link href="{{ asset('/css/AdminLTE.min.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/AdminLTE.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -31,20 +33,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ url('/') }}"><strong>Vota un libro</strong></a>
+                    <a class="navbar-brand" href="{{ url('/') }}"><strong style="color: white">Vota un libro</strong></a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#">Ana Sayfa <span class="sr-only">(current)</span></a></li>
-                        <li class="active"><a href="#">Ana Sayfa <span class="sr-only">(current)</span></a></li>
-                        <li class="active"><a href="#">Ana Sayfa <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="#" style="color: white"><strong>Añadir libro</strong><span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="#" style="color: white"><strong>Ultimos libros</strong><span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="#" style="color: white"><strong>Nosotros</strong><span class="sr-only">(current)</span></a></li>
                         <ul class="nav navbar-nav navbar-right">
                             @if (Auth::guest())
                             <li><a href="{{ url('/auth/login') }}">Iniciar sesión</a></li>
                             <li><a href="{{ url('/auth/register') }}">Registrar</a></li>
                             @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><strong>{{ Auth::user()->name }}</strong> <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><strong style="color: white">{{ Auth::user()->name }}</strong> <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{ url('/profile') }}">Ver perfil</a></li>
                                     <li><a href="{{ url('/auth/logout') }}">Cerrar sesión</a></li>

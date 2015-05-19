@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('content')
+<?php $count = 0?>
 @if(sizeof($books) > 0)
 <div class="container" id="searchable-container">
     <div class="box box-success">
@@ -8,14 +9,24 @@
         <h5 class="box-title" style="margin-left: 3%; margin-right: 3%;">Aproximadamente <strong><?php echo sizeof($books) ?></strong> coincidencias por página</h5>
         <div class="box-body" style="margin-left: 3%; margin-right: 3%;">
             @foreach($books as $book)
-                <table>
+                
+            <?php $count++;?>
+            <table>
                     <tr>
-                        <td>
-                            <a href="{{ url('/books/show',$book->id) }}"><img src="{{ asset('/images/empty_book.jpg') }}" height="10%" /></a>
+                        <td style="width: 20%">
+                            <a href="{{ url('/books/show',$book->id) }}"><img src="../../../public/images/portada  (<?php echo rand(1, 4)?>).jpg" width="150" height="120"/></a>
                         </td>
-                        <td>
-                            <strong><a style="color: #141823; font-size: 14px" href="{{ url('/books/show',$book->id) }}">{{$book->title}}</a></strong><br/>
-                            <?php echo substr($book->synopsis, 0, 350) . '...'; ?> <a style="color: #1a0dab; text-decoration: underline" href="{{ url('/books/show',$book->id) }}">Más sobre este libro...
+                        <td style="width: 80%">
+                            <strong>
+                                <a style="color: #1a0dab; font-size: 16px" href="{{ url('/books/show',$book->id) }}">
+                                    {{$book->title}}
+                                </a>
+                            </strong>
+                            <br/>
+                            <font style="font-size: 15px; color: #006621;">Actualizado el 0<?php echo rand(1, 9)?>/<?php echo rand(01, 12)?>/2015</font>
+                            <br/>
+                            <font style="font-size: 14px">
+                            <?php echo substr($book->synopsis, 0, 400) . '...'; ?></font> <a style="color: #1a0dab; text-decoration: underline" href="{{ url('/books/show',$book->id) }}">Más sobre este libro...
                         </td>
                     </tr>
                 </table>
