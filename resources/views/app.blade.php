@@ -14,6 +14,8 @@
         <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/shadowbox.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/js/shadowbox.js') }}" rel="stylesheet">
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
